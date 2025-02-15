@@ -12,7 +12,7 @@ function Home() {
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}post/`);
       const data = await response.json();
-      setPost(data);
+      setPost(data.posts);
       // console.log(posts);
     } catch (error) {
       console.error(error);
