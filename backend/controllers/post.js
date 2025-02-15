@@ -4,7 +4,8 @@ const { uploadOnCloudinary } = require("../utils/cloudinary");
 exports.getAllPost=async(req, res)=>{
     try{
         const posts=await Post.find().populate('user', 'username');
-        res.json(posts);
+        // res.json(posts);
+        res.json({messages: 'posts are fetched successfully'})
     }
     catch(err){ 
         res.status(500).json({error:err.message});

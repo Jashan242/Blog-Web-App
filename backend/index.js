@@ -13,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.use(cors({
-    origin: 'http://localhost:5173',  // Allow only your frontend's origin
+    origin: ['http://localhost:5173', 'https://blog-web-app-backend-ldl7.onrender.com'],  // Allow only your frontend's origin
     methods: 'GET,POST,PUT,DELETE',  // Allow these methods
     credentials: true,  // Allow cookies to be sent in requests
 }));
