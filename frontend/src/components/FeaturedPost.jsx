@@ -11,7 +11,7 @@ export default function FeaturedPost() {
 
   const fetchPost = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/post/featured`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/post/featured`.replace(/\/+$/, ""));
       const data = await response.json();
       setPost(Array.isArray(data.featuredPost) ? data.featuredPost : []);
     } catch (error) {
