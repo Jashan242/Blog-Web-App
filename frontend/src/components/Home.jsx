@@ -10,7 +10,7 @@ function Home() {
 
   const fetchPosts = async () => {
     try {
-      const response = await fetch(`https://blog-web-app-backend-ldl7.onrender.com/post/`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/post/`);
       const data = await response.json();
       setPost(data);
       // console.log(posts);
