@@ -15,7 +15,7 @@ function SavedPost() {
   const savedPostData = async () => {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/user/savedPosts`,
+        `${import.meta.env.VITE_API_URL}user/savedPosts`,
         {
           method: "GET",
           headers: {
@@ -35,7 +35,7 @@ function SavedPost() {
   const userPostData = async () => {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/user/posts`,
+        `${import.meta.env.VITE_API_URL}user/posts`,
         {
           method: "GET",
           headers: {

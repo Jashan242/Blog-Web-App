@@ -17,7 +17,7 @@ function SinglePost() {
   
   const fetchPost=async ()=>{
     try{
-      const response=await fetch(`${import.meta.env.VITE_API_URL}/post/singlePost/${id}`);
+      const response=await fetch(`${import.meta.env.VITE_API_URL}post/singlePost/${id}`);
       const data=await response.json();
       setPost(data);
       // console.log(post);

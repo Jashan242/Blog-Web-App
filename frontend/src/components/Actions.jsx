@@ -16,7 +16,7 @@ export default function Actions() {
       try {
         if (!token) return;
         
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/user/savedPosts`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}user/savedPosts`, {
           headers: { "Authorization": `Bearer ${token}` },
         });
         const data = await response.json();
@@ -44,7 +44,7 @@ export default function Actions() {
         return;
       }
 
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/post/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}post/${id}`, {
         method: "DELETE",
         headers: { "Authorization": `Bearer ${token}` },
       });
@@ -63,7 +63,7 @@ export default function Actions() {
 
   const handleSaveToggle = async () => {
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/post/save/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}post/save/${id}`, {
         method: isSaved ? "DELETE" : "POST", 
         headers: {
           "Content-Type": "application/json",

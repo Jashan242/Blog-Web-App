@@ -3,6 +3,7 @@ import {useUser} from "@clerk/clerk-react"
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const CreatePost = () => {
 
@@ -40,7 +41,7 @@ const CreatePost = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:3030/post/", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}post/`, {
         method: "POST",
         body: formData,
         headers: {
@@ -51,15 +52,15 @@ const CreatePost = () => {
       const data = await response.json();
 
       if (response.ok) {
-        alert("Post created successfully!");
+        toast.success("Post created successfully!");
         console.log("✅ Post Created:", data);
       } else {
-        console.error("❌ Error:", data.error);
-        alert("Error creating post: " + data.error);
+        console.error("Error:", data.error);
+        toast.error("Error creating post: " + data.error);
       }
     } catch (error) {
-      console.error("❌ Network Error:", error);
-      alert("Failed to create post. Please try again later.");
+      console.error("Network Error:", error);
+      toast.error("Failed to create post. Please try again later.");
     }
   };
 

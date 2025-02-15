@@ -31,7 +31,7 @@ export default function Register() {
 
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/user/register`,
+        `${import.meta.env.VITE_API_URL}user/register`,
         {
           method: "POST",
           body: formData,

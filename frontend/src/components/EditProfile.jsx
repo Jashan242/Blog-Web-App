@@ -31,7 +31,7 @@ function EditProfile({ user, onClose, onSave }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/user/edit`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}user/edit`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

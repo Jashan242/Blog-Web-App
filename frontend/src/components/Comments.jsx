@@ -14,7 +14,7 @@ export default function Comments({id}) {
   console.log("id", id)
   const fetchComments=async ()=>{
     try{
-      const response=await fetch(`${import.meta.env.VITE_API_URL}/comment/${id}`);
+      const response=await fetch(`${import.meta.env.VITE_API_URL}comment/${id}`);
       const data=await response.json();
       setComments(data);
       console.log("All comments",comments);
@@ -46,7 +46,7 @@ export default function Comments({id}) {
   
       console.log("Sending Request:", JSON.stringify(requestBody));
   
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/comment/create/`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}comment/create/`, {
         method: "POST",
         body: JSON.stringify(requestBody),
         headers: {

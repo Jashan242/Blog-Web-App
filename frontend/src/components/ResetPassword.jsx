@@ -22,7 +22,7 @@ function ResetPassword() {
   const resetOtp = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/user/reset-otp`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}user/reset-otp`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email }),
@@ -43,7 +43,7 @@ function ResetPassword() {
   const handlePasswordReset = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/user/reset-password`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}user/reset-password`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

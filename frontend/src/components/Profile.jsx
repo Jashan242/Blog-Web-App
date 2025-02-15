@@ -16,7 +16,7 @@ function Profile() {
 
     const fetchdata=async ()=>{
         try{
-          const response=await fetch(`${import.meta.env.VITE_API_URL}/user/`,{
+          const response=await fetch(`${import.meta.env.VITE_API_URL}user/`,{
             method:'GET',
             headers:{
               'Content-Type':'application/json',
