@@ -5,7 +5,7 @@ exports.getAllPost=async(req, res)=>{
     try{
         const posts=await Post.find().populate('user', 'username');
         // res.json(posts);
-        res.json({messages: 'posts are fetched successfully'})
+        res.json({messages: 'posts are fetched successfully', posts});
     }
     catch(err){ 
         res.status(500).json({error:err.message});
